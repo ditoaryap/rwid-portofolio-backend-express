@@ -22,9 +22,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://google.com"
+    "url": "https://github.com/ditoaryap/rwid-portofolio-backend-express/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/ditoaryap/rwid-portofolio-backend-express#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2"
