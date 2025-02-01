@@ -1,6 +1,6 @@
 import "dotenv/config";
-
 import express from "express";
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -15,28 +15,20 @@ app.get("/user", (req, res) => {
 });
 
 app.post("/user", (req, res) => {
-  const userInput = req.body;
-
-  users.push(userInput);
+  users.push(req.body);
 
   res.json({
-    user: userInput,
-  });
-});
-
-app.get("/user", (req, res) => {
-  res.json({
-    id: 1,
-    name: "dito",
-    users,
+    user: req.body,
   });
 });
 
 app.get("/user/:id", (req, res) => {
-  const id = req.id;
+  const id = Number(req.params.id);
+  const user = users.find((user) => user.id === id);
+  console.log(typeof id, typeof user.id);
+
   res.json({
-    id: id,
-    name: "dito",
+    users: user,
   });
 });
 
